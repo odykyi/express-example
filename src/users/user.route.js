@@ -7,6 +7,13 @@ var router  = express.Router();
 
 
 console.log('------------')
+console.log('------------', DI)
+console.log('------------', DI)
+console.log('------------', DI.get('UserService'))
+console.log('------------', DI.get('UserService').init())
+console.log('------------', DI.get('UserService').init())
+console.log('------------', DI.get('UserService').init())
+console.log('------------', DI.get('UserService').init())
 console.log('------------', DI.get('UserService').init())
 // DI.get('UserService').init()
 //
