@@ -1,26 +1,25 @@
-#!/usr/bin/env node
 
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('./app');
 var debug = require('debug')('express-sequelize');
 var http = require('http');
-var models = require('../models');
+var models = require('../db/models');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = process.env.PORT || 3001;
 app.set('port', port);
-  /**
-   * Create HTTP server.
-   */
+/**
+ * Create HTTP server.
+ */
 var server = http.createServer(app);
 
-models.sequelize.sync().then(function() {
+// models.sequelize.sync({force:false}).then(function() {
   /**
    * Listen on provided port, on all network interfaces.
    */
@@ -29,27 +28,8 @@ models.sequelize.sync().then(function() {
   });
   server.on('error', onError);
   server.on('listening', onListening);
-});
+// });
 
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
 
 /**
  * Event listener for HTTP server "error" event.
