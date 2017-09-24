@@ -1,20 +1,19 @@
-const DI = require('../dependencyInjection')
+const DI = require('../dependencyInjection');
 
-var express = require('express');
-var router  = express.Router();
+const express = require('express');
+
+const router = express.Router();
 
 
-
-
-console.log('------------')
-console.log('------------', DI)
-console.log('------------', DI)
-console.log('------------', DI.get('UserService'))
-console.log('------------', DI.get('UserService').init())
-console.log('------------', DI.get('UserService').init())
-console.log('------------', DI.get('UserService').init())
-console.log('------------', DI.get('UserService').init())
-console.log('------------', DI.get('UserService').init())
+console.log('------------');
+console.log('------------', DI);
+console.log('------------', DI);
+console.log('------------', DI.get('UserService'));
+console.log('------------', DI.get('UserService').init());
+console.log('------------', DI.get('UserService').init());
+console.log('------------', DI.get('UserService').init());
+console.log('------------', DI.get('UserService').init());
+console.log('------------', DI.get('UserService').init());
 // DI.get('UserService').init()
 //
 // router.post('/create', function(req, res) {

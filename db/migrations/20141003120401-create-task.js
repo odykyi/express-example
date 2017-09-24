@@ -1,35 +1,35 @@
-"use strict";
+
 
 module.exports = {
-  up: function (queryInterface, Sequelize) {
+  up(queryInterface, Sequelize) {
     return queryInterface
       .createTable('Tasks', {
         id: {
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
-          allowNull: false
+          allowNull: false,
         },
         title: Sequelize.STRING,
         createdAt: {
           type: Sequelize.DATE,
-          allowNull: false
+          allowNull: false,
         },
         updatedAt: Sequelize.DATE,
         UserId: {
           type: Sequelize.INTEGER,
-          onDelete: "CASCADE",
+          onDelete: 'CASCADE',
           allowNull: false,
           references: {
             model: 'Users',
-            key: 'id'
-          }
-        }
+            key: 'id',
+          },
+        },
       });
   },
 
-  down: function (queryInterface, Sequelize) {
+  down(queryInterface, Sequelize) {
     return queryInterface
       .dropTable('Tasks');
-  }
+  },
 };

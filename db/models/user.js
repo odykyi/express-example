@@ -1,13 +1,13 @@
-"use strict";
 
-module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
-    username: DataTypes.STRING
+
+module.exports = function (sequelize, DataTypes) {
+  const User = sequelize.define('User', {
+    username: DataTypes.STRING,
   });
 
-  User.associate = function(models) {
+  User.associate = function (models) {
     User.hasMany(models.Task);
-  }
-  
+  };
+
   return User;
 };
