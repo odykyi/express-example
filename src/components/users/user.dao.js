@@ -3,7 +3,7 @@
 
 class UserDAO {
   constructor() {
-    console.log('222222 hello WORLD DAOOO');
+    console.log('UserDAO 222222 hello WORLD DAOOO');
   }
 }
 

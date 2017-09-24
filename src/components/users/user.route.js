@@ -1,5 +1,4 @@
-const DI = require('../dependencyInjection');
-
+const IndexComponent = require('../index.component');
 const express = require('express');
 
 const router = express.Router();

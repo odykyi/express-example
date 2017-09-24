@@ -1,4 +1,4 @@
-const DI = require('../dependencyInjection');
+// const DI = require('../dependencyInjection');
 
 class UserService {
   constructor(DI) {
