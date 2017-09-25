@@ -1,6 +1,6 @@
 
 const express = require('express');
-const UserService = require('./user.service');
+const userDI = require('./user.di');
 
 class UserRoute {
   initRoutes() {
@@ -9,9 +9,8 @@ class UserRoute {
 
   constructor() {
     const router = express.Router();
-    this.userService = new UserService();
 
-    router.post('/create', this.userService.create.bind(this.userService));
+    router.get('/create', userDI.service.user.create.bind(userDI.service.user));
 
     // router.post('/create', function(req, res) {
     //   models.User.create({

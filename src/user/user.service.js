@@ -1,12 +1,12 @@
-const UserDAO = require('./user.dao');
 
 class UserService {
-  constructor() {
-    this.userDAO = new UserDAO();
+  constructor(di) {
+    this.di = di;
+    console.log('--UserService----------');
   }
 
   create() {
-    this.userDAO.create();
+    return this.di.dao.user.create.create();
   }
 }
 

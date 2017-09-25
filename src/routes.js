@@ -15,12 +15,21 @@ class Route {
     const allDirs = getDirectories(`${__dirname}/`);
 
     const allModules = allDirs
-      .map((x, index) => ({
-        routeName: oneRouteStr[index],
-        routePath: `${x}/${oneRouteStr[index]}.route.js`,
-      }));
+      .map((x, index) => {
+        const routeName = oneRouteStr[index];
+        const routePath = `${x}/${oneRouteStr[index]}.route.js`;
+        console.log('routeName', routeName);
+        console.log('routePath', routePath);
+        return {
+          routeName,
+          routePath,
+        };
+      });
 
     allModules.forEach(({ routeName, routePath }) => {
+      console.log('---------------------');
+      console.log('routeName', routeName);
+      console.log('routePath', routePath);
       app.use(`/${routeName}`, require(routePath));
     });
   }
