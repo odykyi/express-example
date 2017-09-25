@@ -1,5 +1,3 @@
-
-
 module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface
@@ -24,6 +22,6 @@ module.exports = {
 
   down(queryInterface, Sequelize) {
     return queryInterface
-      .dropTable('Users');
+      .dropTable('users');
   },
 };

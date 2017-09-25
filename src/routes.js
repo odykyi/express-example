@@ -17,7 +17,7 @@ class Route {
     const allModules = allDirs
       .map((x, index) => ({
         routeName: oneRouteStr[index],
-        routePath: `${x}/${oneRouteStr[index].substring(0, oneRouteStr[index].length - 1)}.route.js`,
+        routePath: `${x}/${oneRouteStr[index]}.route.js`,
       }));
 
     allModules.forEach(({ routeName, routePath }) => {
