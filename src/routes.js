@@ -27,7 +27,6 @@ class Route {
       });
 
     allModules.forEach(({ routeName, routePath }) => {
-      console.log('---------------------');
       console.log('routeName', routeName);
       console.log('routePath', routePath);
       app.use(`/${routeName}`, require(routePath));
