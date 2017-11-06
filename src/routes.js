@@ -18,8 +18,7 @@ class Route {
       .map((x, index) => {
         const routeName = oneRouteStr[index];
         const routePath = `${x}/${oneRouteStr[index]}.route.js`;
-        console.log('routeName', routeName);
-        console.log('routePath', routePath);
+        console.log('routePath--', routePath);
         return {
           routeName,
           routePath,
@@ -27,8 +26,7 @@ class Route {
       });
 
     allModules.forEach(({ routeName, routePath }) => {
-      console.log('routeName', routeName);
-      console.log('routePath', routePath);
+      console.log('routeName--', routeName);
       app.use(`/${routeName}`, require(routePath));
     });
   }
